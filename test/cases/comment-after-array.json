@@ -1,0 +1,1 @@
+{  "no-restricted-globals": [], // non-complete list of globals that are easy to access unintentionally

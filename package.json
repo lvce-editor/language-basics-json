@@ -19,5 +19,12 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "test-tokenize": {
+    "skip": [
+      "duplicate-comma",
+      "invalid-number-after-boolean",
+      "missing-comma"
+    ]
   }
 }

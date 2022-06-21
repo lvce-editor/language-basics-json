@@ -1,0 +1,12 @@
+Punctuation
+NewLine
+Whitespace
+Punctuation
+Punctuation
+Punctuation
+NewLine
+Whitespace
+Punctuation
+Punctuation
+NewLine
+Punctuation
