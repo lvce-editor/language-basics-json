@@ -26,7 +26,8 @@
         ".swcrc",
         ".hintrc",
         ".babelrc",
-        ".prettierrc"
+        ".prettierrc",
+        ".sublime-project"
       ],
       "filenames": ["composer.lock", ".watchmanconfig"],
       "tokenize": "src/tokenizeJson.js"
