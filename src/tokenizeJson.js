@@ -220,6 +220,9 @@ export const tokenizeLine = (line, lineState) => {
         if ((next = part.match(RE_COLON))) {
           token = TokenType.Punctuation
           state = State.AfterPropertyNameAfterColon
+        } else if ((next = part.match(RE_ANYTHING))) {
+          token = TokenType.Text
+          state = State.AfterCurlyOpen
         } else {
           throw new Error('no')
         }
@@ -309,9 +312,10 @@ export const tokenizeLine = (line, lineState) => {
 // }) //?
 
 const result = tokenizeLine(
-  `{ "testRegex": "/scripts/jest/dont-run-jest-directly\\.js$"`,
+  `"extends: "eslint:recommended",
+   `,
   {
-    state: State.TopLevelContent,
+    state: State.AfterCurlyOpen,
     stack: [],
   }
 ) //?
