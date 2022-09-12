@@ -99,8 +99,11 @@ export const initialLineState = {
   stack: [],
 }
 
+export const hasArrayReturn = true
+
 /**
  * @param {string} line
+ * @param {any} lineState
  */
 export const tokenizeLine = (line, lineState) => {
   let next
@@ -292,10 +295,7 @@ export const tokenizeLine = (line, lineState) => {
     const currentTokenText = next[0]
     const currentTokenLength = currentTokenText.length
     index += currentTokenLength
-    tokens.push({
-      type: token,
-      length: currentTokenLength,
-    })
+    tokens.push(token, currentTokenLength)
   }
   if (state === State.InsideLineComment) {
     state = State.TopLevelContent
@@ -306,22 +306,3 @@ export const tokenizeLine = (line, lineState) => {
     tokens,
   }
 }
-
-// const result = tokenizeLine(` "a": "b",`, {
-//   state: State.AfterCurlyOpen,
-// }) //?
-
-const result = tokenizeLine(
-  `"extends: "eslint:recommended",
-   `,
-  {
-    state: State.AfterCurlyOpen,
-    stack: [],
-  }
-) //?
-
-result.tokens.map((t) => TokenMap[t.type]) //?
-
-// tokenizeLine(`{
-//   "a": "b"
-// }`) //?
