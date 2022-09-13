@@ -109,6 +109,7 @@ Punctuation
 JsonPropertyName
 Punctuation
 NewLine
+Whitespace
 Text
 NewLine
 Whitespace

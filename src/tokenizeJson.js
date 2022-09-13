@@ -113,6 +113,7 @@ export const tokenizeLine = (line, lineState) => {
   let __r = 0
   const tokens = []
   const stack = lineState.stack
+  state
   while (index < line.length) {
     if (__r++ > 100_000_000_000) {
       throw new Error('endless loop')
@@ -162,6 +163,7 @@ export const tokenizeLine = (line, lineState) => {
         }
         break
       case State.AfterCurlyOpen:
+        part
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.AfterCurlyOpen
@@ -190,6 +192,7 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
           token = TokenType.Punctuation
           state = stack.pop()
+          state
         } else if ((next = part.match(RE_ESCAPED_QUOTE))) {
           token = TokenType.JsonPropertyName
           state = State.InsidePropertyNameString
@@ -223,6 +226,9 @@ export const tokenizeLine = (line, lineState) => {
         if ((next = part.match(RE_COLON))) {
           token = TokenType.Punctuation
           state = State.AfterPropertyNameAfterColon
+        } else if ((next = part.match(RE_WHITESPACE))) {
+          token = TokenType.Whitespace
+          state = State.AfterPropertyName
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.AfterCurlyOpen
@@ -231,11 +237,11 @@ export const tokenizeLine = (line, lineState) => {
         }
         break
       case State.AfterPropertyNameAfterColon:
+        part
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.AfterPropertyNameAfterColon
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
-          line.slice(0, index) //?
           token = TokenType.Punctuation
           state = State.InsideString
           stack.push(State.AfterPropertyValue)
