@@ -30,7 +30,7 @@
         ".sublime-project",
         ".code-snippets"
       ],
-      "filenames": ["composer.lock", ".watchmanconfig"],
+      "fileNames": ["composer.lock", ".watchmanconfig"],
       "tokenize": "src/tokenizeJson.js"
     }
   ]
