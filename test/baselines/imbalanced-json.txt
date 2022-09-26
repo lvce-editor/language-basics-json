@@ -5,12 +5,12 @@ Punctuation
 Punctuation
 Whitespace
 Punctuation
-String
+JsonPropertyValueString
 Punctuation
 Punctuation
 Punctuation
 Whitespace
 Punctuation
-String
+JsonPropertyValueString
 Punctuation
 Text

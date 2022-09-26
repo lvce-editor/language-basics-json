@@ -8,7 +8,7 @@ Whitespace
 Punctuation
 Whitespace
 Punctuation
-String
+JsonPropertyValueString
 Punctuation
 NewLine
 Punctuation

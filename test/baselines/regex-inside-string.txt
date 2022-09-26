@@ -6,8 +6,8 @@ Punctuation
 Punctuation
 Whitespace
 Punctuation
+JsonPropertyValueString
 String
 String
-String
-String
+JsonPropertyValueString
 Punctuation

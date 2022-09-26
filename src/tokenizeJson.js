@@ -47,6 +47,7 @@ export const TokenType = {
   Error: 18,
   Unknown: 19,
   Text: 20,
+  JsonPropertyValueString: 21,
 }
 
 export const TokenMap = {
@@ -70,6 +71,7 @@ export const TokenMap = {
   [TokenType.NewLine]: 'NewLine',
   [TokenType.Text]: 'Text',
   [TokenType.Numeric]: 'Numeric',
+  [TokenType.JsonPropertyValueString]: 'JsonPropertyValueString',
 }
 
 const RE_SELECTOR = /^[\.a-zA-Z\d\-\:>]+/
@@ -205,7 +207,7 @@ export const tokenizeLine = (line, lineState) => {
         break
       case State.InsideString:
         if ((next = part.match(RE_STRING_DOUBLE_QUOTE_CONTENT))) {
-          token = TokenType.String
+          token = TokenType.JsonPropertyValueString
           state = State.InsideString
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
           token = TokenType.Punctuation
