@@ -28,6 +28,7 @@
         ".babelrc",
         ".prettierrc",
         ".sublime-project",
+        ".all-contributorsrc",
         ".code-snippets"
       ],
       "fileNames": ["composer.lock", ".watchmanconfig"],
