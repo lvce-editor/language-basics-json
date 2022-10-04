@@ -34,7 +34,8 @@
         "composer.lock",
         ".watchmanconfig",
         ".all-contributorsrc",
-        ".imgbotconfig"
+        ".imgbotconfig",
+        ".stylelintrc"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
