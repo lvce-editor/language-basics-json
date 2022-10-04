@@ -28,10 +28,14 @@
         ".babelrc",
         ".prettierrc",
         ".sublime-project",
-        ".all-contributorsrc",
         ".code-snippets"
       ],
-      "fileNames": ["composer.lock", ".watchmanconfig"],
+      "fileNames": [
+        "composer.lock",
+        ".watchmanconfig",
+        ".all-contributorsrc",
+        ".imgbotconfig"
+      ],
       "tokenize": "src/tokenizeJson.js"
     }
   ]
