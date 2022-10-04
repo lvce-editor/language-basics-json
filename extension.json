@@ -35,7 +35,8 @@
         ".watchmanconfig",
         ".all-contributorsrc",
         ".imgbotconfig",
-        ".stylelintrc"
+        ".stylelintrc",
+        ".parcelrc"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
