@@ -36,7 +36,8 @@
         ".all-contributorsrc",
         ".imgbotconfig",
         ".stylelintrc",
-        ".parcelrc"
+        ".parcelrc",
+        ".publishrc"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
