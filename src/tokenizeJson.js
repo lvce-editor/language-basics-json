@@ -95,6 +95,7 @@ const RE_NUMERIC =
 const RE_TEXT = /^[^\s\{\}\[\]]+/
 const RE_ESCAPED_QUOTE = /^\\"/
 const RE_BACK_SLASH = /^\\/
+const RE_WORD = /^\w+/
 
 export const initialLineState = {
   state: State.TopLevelContent,
@@ -165,7 +166,6 @@ export const tokenizeLine = (line, lineState) => {
         }
         break
       case State.AfterCurlyOpen:
-        part
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.AfterCurlyOpen
@@ -182,6 +182,9 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_LINE_COMMENT))) {
           token = TokenType.Comment
           state = State.AfterCurlyOpen
+        } else if ((next = part.match(RE_WORD))) {
+          token = TokenType.Text
+          state = State.AfterPropertyName
         } else {
           part //?
           throw new Error('no')
@@ -239,7 +242,6 @@ export const tokenizeLine = (line, lineState) => {
         }
         break
       case State.AfterPropertyNameAfterColon:
-        part
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.AfterPropertyNameAfterColon
