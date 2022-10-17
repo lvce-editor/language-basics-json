@@ -93,8 +93,9 @@ const RE_ANYTHING = /^.+/s
 const RE_NUMERIC =
   /^((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b/
 const RE_TEXT = /^[^\s\{\}\[\]]+/
-const RE_ESCAPED_QUOTE = /^\\"/
-const RE_BACK_SLASH = /^\\/
+// const RE_ESCAPED_QUOTE = /^\\"/
+// const RE_BACK_SLASH = /^\\/
+const RE_STRING_ESCAPE = /^\\.?/
 const RE_WORD = /^\w+/
 
 export const initialLineState = {
@@ -198,10 +199,7 @@ export const tokenizeLine = (line, lineState) => {
           token = TokenType.Punctuation
           state = stack.pop()
           state
-        } else if ((next = part.match(RE_ESCAPED_QUOTE))) {
-          token = TokenType.JsonPropertyName
-          state = State.InsidePropertyNameString
-        } else if ((next = part.match(RE_BACK_SLASH))) {
+        } else if ((next = part.match(RE_STRING_ESCAPE))) {
           token = TokenType.JsonPropertyName
           state = State.InsidePropertyNameString
         } else {
@@ -215,10 +213,7 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
           token = TokenType.Punctuation
           state = stack.pop()
-        } else if ((next = part.match(RE_ESCAPED_QUOTE))) {
-          token = TokenType.String
-          state = State.InsideString
-        } else if ((next = part.match(RE_BACK_SLASH))) {
+        } else if ((next = part.match(RE_STRING_ESCAPE))) {
           token = TokenType.String
           state = State.InsideString
         } else {
@@ -316,3 +311,8 @@ export const tokenizeLine = (line, lineState) => {
     tokens,
   }
 }
+
+tokenizeLine(`  "toggle_comment": "Ctrl-\\"`, {
+  ...initialLineState,
+  state: State.AfterCurlyOpen,
+}) //?

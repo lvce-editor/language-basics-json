@@ -1,6 +1,5 @@
 Punctuation
 Punctuation
 JsonPropertyName
-JsonPropertyName
 Punctuation
-Punctuation
+Text

@@ -1,4 +1,4 @@
 Punctuation
 String
-String
+Punctuation
 Punctuation
