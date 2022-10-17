@@ -1,4 +1,5 @@
 Punctuation
+NewLine
 Whitespace
 Punctuation
 JsonPropertyName
@@ -8,5 +9,6 @@ Whitespace
 Punctuation
 JsonPropertyValueString
 String
-JsonPropertyValueString
+Punctuation
+NewLine
 Punctuation
