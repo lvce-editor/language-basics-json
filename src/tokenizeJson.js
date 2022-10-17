@@ -186,6 +186,9 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_WORD))) {
           token = TokenType.Text
           state = State.AfterPropertyName
+        } else if ((next = part.match(RE_ANYTHING))) {
+          token = TokenType.Text
+          state = State.AfterCurlyOpen
         } else {
           part //?
           throw new Error('no')
@@ -311,8 +314,3 @@ export const tokenizeLine = (line, lineState) => {
     tokens,
   }
 }
-
-tokenizeLine(`  "toggle_comment": "Ctrl-\\"`, {
-  ...initialLineState,
-  state: State.AfterCurlyOpen,
-}) //?
