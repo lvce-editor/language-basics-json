@@ -28,7 +28,8 @@
         ".babelrc",
         ".prettierrc",
         ".sublime-project",
-        ".code-snippets"
+        ".code-snippets",
+        ".tour"
       ],
       "fileNames": [
         "composer.lock",
