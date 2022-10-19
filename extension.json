@@ -29,7 +29,8 @@
         ".prettierrc",
         ".sublime-project",
         ".code-snippets",
-        ".tour"
+        ".tour",
+        ".code-workspace"
       ],
       "fileNames": [
         "composer.lock",
