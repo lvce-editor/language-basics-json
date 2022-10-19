@@ -38,7 +38,8 @@
         ".imgbotconfig",
         ".stylelintrc",
         ".parcelrc",
-        ".publishrc"
+        ".publishrc",
+        ".whitesource"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
