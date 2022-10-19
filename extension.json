@@ -30,7 +30,8 @@
         ".sublime-project",
         ".code-snippets",
         ".tour",
-        ".heapsnapshot"
+        ".heapsnapshot",
+        ".code-workspace"
       ],
       "fileNames": [
         "composer.lock",
