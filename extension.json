@@ -41,7 +41,8 @@
         ".stylelintrc",
         ".parcelrc",
         ".publishrc",
-        ".whitesource"
+        ".whitesource",
+        ".mention-bot"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
