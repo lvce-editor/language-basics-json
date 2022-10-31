@@ -42,7 +42,8 @@
         ".parcelrc",
         ".publishrc",
         ".whitesource",
-        ".mention-bot"
+        ".mention-bot",
+        "pdfjs.config"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
