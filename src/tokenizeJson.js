@@ -255,7 +255,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.AfterPropertyValue
         } else if ((next = part.match(RE_TEXT))) {
           token = TokenType.Text
-          state = State.TopLevelContent
+          state = State.AfterCurlyOpen
         } else if ((next = part.match(RE_CURLY_OPEN))) {
           token = TokenType.Punctuation
           state = State.AfterCurlyOpen

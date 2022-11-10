@@ -5,4 +5,4 @@ Punctuation
 Punctuation
 Whitespace
 Text
-CurlyClose
+Punctuation
