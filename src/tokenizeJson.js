@@ -311,6 +311,9 @@ export const tokenizeLine = (line, lineState) => {
   if (state === State.InsideLineComment) {
     state = State.TopLevelContent
   }
+  if (state === State.AfterPropertyValue) {
+    state = State.AfterCurlyOpen
+  }
   return {
     state,
     stack,
