@@ -43,7 +43,8 @@
         ".publishrc",
         ".whitesource",
         ".mention-bot",
-        "pdfjs.config"
+        "pdfjs.config",
+        "tsconfig.tsbuildinfo"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
