@@ -44,7 +44,8 @@
         ".whitesource",
         ".mention-bot",
         "pdfjs.config",
-        "tsconfig.tsbuildinfo"
+        "tsconfig.tsbuildinfo",
+        ".gdntsa"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
