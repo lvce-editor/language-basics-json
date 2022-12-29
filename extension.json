@@ -45,7 +45,8 @@
         ".mention-bot",
         "pdfjs.config",
         "tsconfig.tsbuildinfo",
-        ".gdntsa"
+        ".gdntsa",
+        ".nycrc"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
