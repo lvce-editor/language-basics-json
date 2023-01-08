@@ -11,6 +11,7 @@ export const State = {
   JsonPropertyKey: 7,
   InsideLineComment: 8,
   InsidePropertyNameString: 9,
+  InsideBlockComment: 10,
 }
 
 export const StateMap = {
@@ -97,6 +98,10 @@ const RE_TEXT = /^[^\s\{\}\[\]]+/
 // const RE_BACK_SLASH = /^\\/
 const RE_STRING_ESCAPE = /^\\.?/
 const RE_WORD = /^\w+/
+const RE_BLOCK_COMMENT_START = /^\/\*/
+const RE_BLOCK_COMMENT_CONTENT = /^.+?(?=\*\/)/
+const RE_BLOCK_COMMENT_END = /^\*\//
+const RE_ANYTHING_UNTIL_END = /^.+/s
 
 export const initialLineState = {
   state: State.TopLevelContent,
@@ -158,6 +163,10 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_CURLY_CLOSE))) {
           token = TokenType.CurlyClose
           state = stack.pop()
+        } else if ((next = part.match(RE_BLOCK_COMMENT_START))) {
+          token = TokenType.Comment
+          state = State.InsideBlockComment
+          stack.push(State.TopLevelContent)
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.TopLevelContent
@@ -186,6 +195,10 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_WORD))) {
           token = TokenType.Text
           state = State.AfterPropertyName
+        } else if ((next = part.match(RE_BLOCK_COMMENT_START))) {
+          token = TokenType.Comment
+          state = State.InsideBlockComment
+          stack.push(State.AfterCurlyOpen)
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.AfterCurlyOpen
@@ -294,6 +307,20 @@ export const tokenizeLine = (line, lineState) => {
         if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Comment
           state = State.TopLevelContent
+        } else {
+          throw new Error('no')
+        }
+        break
+      case State.InsideBlockComment:
+        if ((next = part.match(RE_BLOCK_COMMENT_END))) {
+          token = TokenType.Comment
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_BLOCK_COMMENT_CONTENT))) {
+          token = TokenType.Comment
+          state = State.InsideBlockComment
+        } else if ((next = part.match(RE_ANYTHING_UNTIL_END))) {
+          token = TokenType.Comment
+          state = State.InsideBlockComment
         } else {
           throw new Error('no')
         }

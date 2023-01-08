@@ -1,6 +1,5 @@
-Text
+Comment
 NewLine
-Whitespace
-Text
+Comment
 NewLine
-Text
+Comment
