@@ -15,5 +15,15 @@ Comment
 NewLine
 Whitespace
 Punctuation
+JsonPropertyName
+Punctuation
+Punctuation
+Whitespace
+Punctuation
+JsonPropertyValueString
+Punctuation
+NewLine
+Whitespace
+Punctuation
 NewLine
 Punctuation

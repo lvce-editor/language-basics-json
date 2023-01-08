@@ -314,7 +314,7 @@ export const tokenizeLine = (line, lineState) => {
       case State.InsideBlockComment:
         if ((next = part.match(RE_BLOCK_COMMENT_END))) {
           token = TokenType.Comment
-          state = State.TopLevelContent
+          state = stack.pop() || State.TopLevelContent
         } else if ((next = part.match(RE_BLOCK_COMMENT_CONTENT))) {
           token = TokenType.Comment
           state = State.InsideBlockComment
