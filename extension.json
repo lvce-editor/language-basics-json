@@ -46,7 +46,8 @@
         "pdfjs.config",
         "tsconfig.tsbuildinfo",
         ".gdntsa",
-        ".nycrc"
+        ".nycrc",
+        "manifest.webapp"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
