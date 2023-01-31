@@ -47,7 +47,8 @@
         "tsconfig.tsbuildinfo",
         ".gdntsa",
         ".nycrc",
-        "manifest.webapp"
+        "manifest.webapp",
+        ".alexrc"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
