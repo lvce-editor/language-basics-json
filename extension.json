@@ -31,7 +31,8 @@
         ".code-snippets",
         ".tour",
         ".heapsnapshot",
-        ".code-workspace"
+        ".code-workspace",
+        ".code-profile"
       ],
       "fileNames": [
         "composer.lock",
