@@ -49,7 +49,8 @@
         ".gdntsa",
         ".nycrc",
         "manifest.webapp",
-        ".alexrc"
+        ".alexrc",
+        ".yarn-integrity"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
