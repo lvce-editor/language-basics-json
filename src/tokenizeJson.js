@@ -295,6 +295,9 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_COMMA))) {
           token = TokenType.Punctuation
           state = State.AfterCurlyOpen
+        } else if ((next = part.match(RE_LINE_COMMENT))) {
+          token = TokenType.Comment
+          state = State.AfterPropertyValue
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.AfterCurlyOpen
