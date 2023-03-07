@@ -32,7 +32,8 @@
         ".tour",
         ".heapsnapshot",
         ".code-workspace",
-        ".code-profile"
+        ".code-profile",
+        ".github-issues"
       ],
       "fileNames": [
         "composer.lock",
