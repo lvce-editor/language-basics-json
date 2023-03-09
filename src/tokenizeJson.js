@@ -298,6 +298,10 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_LINE_COMMENT))) {
           token = TokenType.Comment
           state = State.AfterPropertyValue
+        } else if ((next = part.match(RE_BLOCK_COMMENT_START))) {
+          token = TokenType.Comment
+          state = State.InsideBlockComment
+          stack.push(State.AfterPropertyValue)
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.AfterCurlyOpen
