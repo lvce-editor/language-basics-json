@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "types": [" "jest"],
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+  },
+  "include": ["src", "test"]
+}
