@@ -51,7 +51,8 @@
         ".nycrc",
         "manifest.webapp",
         ".alexrc",
-        ".yarn-integrity"
+        ".yarn-integrity",
+        ".tsbuildinfo"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
