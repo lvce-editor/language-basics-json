@@ -1,0 +1,13 @@
+Punctuation
+NewLine
+Whitespace
+Punctuation
+JsonPropertyName
+Punctuation
+Punctuation
+Whitespace
+LanguageConstant
+Punctuation
+Text
+NewLine
+Punctuation
