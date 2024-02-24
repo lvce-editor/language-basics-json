@@ -1,0 +1,12 @@
+Punctuation
+Whitespace
+LanguageConstant
+Punctuation
+Whitespace
+LanguageConstant
+Punctuation
+Whitespace
+Punctuation
+Punctuation
+Whitespace
+Punctuation

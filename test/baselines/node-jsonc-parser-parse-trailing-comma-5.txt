@@ -1,0 +1,8 @@
+Punctuation
+Whitespace
+Numeric
+Punctuation
+Whitespace
+Numeric
+Whitespace
+Punctuation
