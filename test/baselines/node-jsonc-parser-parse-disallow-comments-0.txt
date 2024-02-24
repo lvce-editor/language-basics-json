@@ -1,0 +1,16 @@
+Punctuation
+Whitespace
+Numeric
+Punctuation
+Whitespace
+Numeric
+Punctuation
+Whitespace
+LanguageConstant
+Punctuation
+Whitespace
+Punctuation
+JsonPropertyValueString
+Punctuation
+Whitespace
+Punctuation

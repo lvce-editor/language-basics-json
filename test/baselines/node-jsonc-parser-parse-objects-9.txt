@@ -1,0 +1,9 @@
+Punctuation
+Whitespace
+Punctuation
+Punctuation
+Punctuation
+Whitespace
+LanguageConstant
+Whitespace
+Punctuation
