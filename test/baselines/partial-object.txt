@@ -10,7 +10,10 @@ Whitespace
 Punctuation
 JsonPropertyValueString
 Punctuation
-Text
+Punctuation
+Whitespace
+Numeric
+Punctuation
 NewLine
 Whitespace
 Punctuation

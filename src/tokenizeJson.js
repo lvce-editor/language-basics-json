@@ -302,6 +302,9 @@ export const tokenizeLine = (line, lineState) => {
           token = TokenType.Comment
           state = State.InsideBlockComment
           stack.push(State.AfterPropertyValue)
+        } else if ((next = part.match(RE_COLON))) {
+          token = TokenType.Punctuation
+          state = State.AfterPropertyNameAfterColon
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
           state = State.AfterCurlyOpen
