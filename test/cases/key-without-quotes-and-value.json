@@ -1,0 +1,8 @@
+{
+  "rules": {
+    abc
+  },
+  "ignore": [
+    "dist"
+  ]
+}
