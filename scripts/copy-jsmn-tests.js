@@ -9,26 +9,44 @@ const root = path.join(__dirname, '..')
 const REPO = 'https://github.com/zserge/jsmn'
 const COMMIT = '25647e692c7906b96ffd2b05ca54c097948e879c'
 
-const getTestName = (line) => {
-  return (
-    'jsmn-' +
-    line.toLowerCase().trim().replaceAll(' ', '-').replaceAll('/', '-')
-  )
+const getTestName = (index) => {
+  return 'jsmn-' + index + ''
 }
 
-const getAllTests = async (folder) => {
-  const dirents = await readdir(folder, { recursive: true })
+const trim = (line) => {
+  return line.trim()
+}
+
+const getAllTests = async (file) => {
+  const content = await readFile(file, 'utf8')
+  const lines = content.split('\n')
+  const trimmedLines = lines.map(trim)
   const allTests = []
-  for (const dirent of dirents) {
-    if (!dirent.endsWith('.json')) {
+  for (const line of trimmedLines) {
+    // console.log({ trimmedLines })
+    const checkParseIndex = line.indexOf('check(parse("')
+    if (checkParseIndex === -1) {
       continue
     }
-    const filePath = `${folder}/${dirent}`
-    const testName = getTestName(dirent)
-    const fileContent = await readFile(filePath, 'utf8')
+    const start = checkParseIndex + 'check(parse("'.length
+    let end = start
+    console.log({ line })
+    while (++end < line.length) {
+      const char = line[end]
+      if (char === '\\') {
+        end++
+      } else if (char === '"') {
+        break
+      }
+    }
+    const content = line
+      .slice(start, end)
+      .replaceAll('\\"', '"')
+      .replaceAll('\\\\', '\\')
+      .replaceAll('\\n', '\n')
     allTests.push({
-      testName,
-      testContent: fileContent,
+      testName: getTestName(allTests.length + 1),
+      testContent: content,
     })
   }
   return allTests
@@ -53,7 +71,7 @@ const main = async () => {
   await cp(`${root}/.tmp/jsmn/test`, `${root}/.tmp/jsmn-test`, {
     recursive: true,
   })
-  const allTests = await getAllTests(`${root}/.tmp/jsmn-test`)
+  const allTests = await getAllTests(`${root}/.tmp/jsmn-test/tests.c`)
   await writeTestFiles(allTests)
 }
 
