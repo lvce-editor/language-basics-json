@@ -1,0 +1,15 @@
+Punctuation
+Punctuation
+JsonPropertyName
+Punctuation
+Punctuation
+Whitespace
+Punctuation
+Punctuation
+JsonPropertyName
+Punctuation
+Punctuation
+Whitespace
+Numeric
+Whitespace
+Text
