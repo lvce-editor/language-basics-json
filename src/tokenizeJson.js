@@ -277,6 +277,9 @@ export const tokenizeLine = (line, lineState) => {
           token = TokenType.Punctuation
           state = State.TopLevelContent
           stack.push(State.AfterPropertyValue)
+        } else if ((next = part.match(RE_CURLY_CLOSE))) {
+          token = TokenType.Punctuation
+          state = stack.pop() || State.TopLevelContent
         } else {
           line.slice(0, index) //?
           throw new Error('no')
