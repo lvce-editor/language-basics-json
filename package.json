@@ -38,7 +38,8 @@
       "espree-fixtures-libraries-underscore-1.5.2.js.result.json",
       "espree-fixtures-libraries-xmlhttprequest.js.result.json",
       "espree-fixtures-libraries-yui-3.12.0.js.result.json",
-      "node-jsonc-parser-parse-objects-with-errors-5"
+      "node-jsonc-parser-parse-objects-with-errors-5",
+      "object-property-without-value"
     ]
   }
 }
