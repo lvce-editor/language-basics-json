@@ -30,7 +30,6 @@ const getAllTests = async (file) => {
     }
     const start = checkParseIndex + 'check(parse("'.length
     let end = start
-    console.log({ line })
     while (++end < line.length) {
       const char = line[end]
       if (char === '\\') {
