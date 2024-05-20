@@ -1,0 +1,7 @@
+Punctuation
+Whitespace
+LanguageConstant
+Punctuation
+Whitespace
+Text
+NewLine
