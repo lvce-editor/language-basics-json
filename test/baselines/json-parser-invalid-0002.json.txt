@@ -1,0 +1,5 @@
+Punctuation
+Punctuation
+CurlyClose
+NewLine
+NewLine
