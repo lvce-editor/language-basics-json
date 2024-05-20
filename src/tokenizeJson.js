@@ -143,7 +143,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.TopLevelContent
         } else if ((next = part.match(RE_SQUARE_CLOSE))) {
           token = TokenType.Punctuation
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
         } else if ((next = part.match(RE_COMMA))) {
           token = TokenType.Punctuation
           state = State.TopLevelContent
@@ -162,7 +162,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.InsideLineComment
         } else if ((next = part.match(RE_CURLY_CLOSE))) {
           token = TokenType.CurlyClose
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
         } else if ((next = part.match(RE_BLOCK_COMMENT_START))) {
           token = TokenType.Comment
           state = State.InsideBlockComment
@@ -185,7 +185,7 @@ export const tokenizeLine = (line, lineState) => {
           stack.push(State.AfterPropertyName)
         } else if ((next = part.match(RE_CURLY_CLOSE))) {
           token = TokenType.Punctuation
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
           if (!state) {
             throw new Error('imbalanced json')
           }
@@ -213,7 +213,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.InsidePropertyNameString
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
           token = TokenType.Punctuation
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
           state
         } else if ((next = part.match(RE_STRING_ESCAPE))) {
           token = TokenType.JsonPropertyName
@@ -228,7 +228,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.InsideString
         } else if ((next = part.match(RE_DOUBLE_QUOTE))) {
           token = TokenType.Punctuation
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
         } else if ((next = part.match(RE_STRING_ESCAPE))) {
           token = TokenType.String
           state = State.InsideString
@@ -288,7 +288,7 @@ export const tokenizeLine = (line, lineState) => {
       case State.AfterPropertyValue:
         if ((next = part.match(RE_CURLY_CLOSE))) {
           token = TokenType.Punctuation
-          state = stack.pop()
+          state = stack.pop() || State.TopLevelContent
           if (!state) {
             throw new Error('inbalanced json')
           }

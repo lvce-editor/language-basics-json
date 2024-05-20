@@ -37,8 +37,7 @@
       "espree-fixtures-libraries-mootools-1.4.5.js.result.json",
       "espree-fixtures-libraries-underscore-1.5.2.js.result.json",
       "espree-fixtures-libraries-xmlhttprequest.js.result.json",
-      "espree-fixtures-libraries-yui-3.12.0.js.result.json",
-      "missing-opening-quote-3"
+      "espree-fixtures-libraries-yui-3.12.0.js.result.json"
     ]
   }
 }
