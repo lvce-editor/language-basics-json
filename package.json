@@ -24,7 +24,6 @@
   },
   "test-tokenize": {
     "skip": [
-      "espree-fixtures-libraries-angular-1.2.5.js.result.json",
       "espree-fixtures-libraries-backbone-1.1.0.js.result.json",
       "espree-fixtures-libraries-benchmark.js.result.json",
       "espree-fixtures-libraries-escodegen.browser.js.result.json",
