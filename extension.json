@@ -11,6 +11,7 @@
         ".jscsrc",
         ".webmanifest",
         ".js.map",
+        ".mjs.map",
         ".css.map",
         ".ts.map",
         ".har",
