@@ -28,7 +28,6 @@ export const StateMap = {
  * @enum number
  */
 export const TokenType = {
-  CssSelector: 1,
   Whitespace: 2,
   Punctuation: 3,
   PropertyName: 4,
@@ -52,7 +51,6 @@ export const TokenType = {
 }
 
 export const TokenMap = {
-  [TokenType.CssSelector]: 'CssSelector',
   [TokenType.Whitespace]: 'Whitespace',
   [TokenType.Punctuation]: 'Punctuation',
   [TokenType.PropertyName]: 'PropertyName',
@@ -75,7 +73,6 @@ export const TokenMap = {
   [TokenType.JsonPropertyValueString]: 'JsonPropertyValueString',
 }
 
-const RE_SELECTOR = /^[\.a-zA-Z\d\-\:>]+/
 const RE_WHITESPACE = /^\s+/
 const RE_CURLY_OPEN = /^\{/
 const RE_CURLY_CLOSE = /^\}/
@@ -94,8 +91,6 @@ const RE_ANYTHING = /^.+/s
 const RE_NUMERIC =
   /^((0(x|X)[0-9a-fA-F]*)|(\-?([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b/
 const RE_TEXT = /^[^\s\{\}\[\]]+/
-// const RE_ESCAPED_QUOTE = /^\\"/
-// const RE_BACK_SLASH = /^\\/
 const RE_STRING_ESCAPE = /^\\.?/
 const RE_WORD = /^\w+/
 const RE_BLOCK_COMMENT_START = /^\/\*/
