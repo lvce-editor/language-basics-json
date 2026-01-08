@@ -54,7 +54,7 @@
         "manifest.webapp",
         ".alexrc",
         ".yarn-integrity",
-        ".tsbuildinfo"
+        "tsconfig.tsbuildinfo"
       ],
       "tokenize": "src/tokenizeJson.js"
     }
