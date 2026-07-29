@@ -11,6 +11,7 @@
         ".code-profile",
         ".code-snippets",
         ".code-workspace",
+        ".cpuprofile",
         ".css.map",
         ".eslintrc.json",
         ".eslintrc",
