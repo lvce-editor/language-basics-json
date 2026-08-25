@@ -1,0 +1,3 @@
+{"timestamp":"2026-07-30T17:00:13.336Z","type":"session_meta","payload":{"session_id":"019fb316-6393-7000-8000-000000000001","model":"gpt-5"}}
+{"timestamp":"2026-07-30T17:00:13.337Z","type":"event_msg","payload":{"type":"task_started","turn_id":"019fb316-6393-7000-8000-000000000002"}}
+{"timestamp":"2026-07-30T17:00:13.338Z","type":"response_item","payload":{"type":"message","role":"assistant","content":[{"type":"output_text","text":"Hello from an AI log"}]}}

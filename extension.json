@@ -58,6 +58,11 @@
         "tsconfig.tsbuildinfo"
       ],
       "tokenize": "src/tokenizeJson.js"
+    },
+    {
+      "id": "jsonl",
+      "extensions": [".jsonl"],
+      "tokenize": "src/tokenizeJson.js"
     }
   ],
   "repository": "https://github.com/lvce-editor/language-basics-json"
