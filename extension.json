@@ -56,7 +56,15 @@
         ".yarn-integrity",
         "tsconfig.tsbuildinfo"
       ],
-      "tokenize": "src/tokenizeJson.js"
+      "tokenize": "src/tokenizeJson.js",
+      "configuration": "./languageConfiguration.json"
+    },
+    {
+      "id": "jsonc",
+      "extensions": [".jsonc"],
+      "fileNames": ["settings.json"],
+      "tokenize": "src/tokenizeJson.js",
+      "configuration": "./languageConfiguration.json"
     },
     {
       "id": "jsonc",
