@@ -67,11 +67,6 @@
       "configuration": "./languageConfiguration.json"
     },
     {
-      "id": "jsonc",
-      "extensions": [".jsonc"],
-      "tokenize": "src/tokenizeJson.js"
-    },
-    {
       "id": "jsonl",
       "extensions": [".jsonl"],
       "tokenize": "src/tokenizeJson.js"
