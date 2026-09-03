@@ -27,7 +27,6 @@
         ".jshintrc",
         ".jslintrc",
         ".json",
-        ".jsonc",
         ".jsonld",
         ".mention-bot",
         ".mjs.map",
@@ -57,6 +56,11 @@
         ".yarn-integrity",
         "tsconfig.tsbuildinfo"
       ],
+      "tokenize": "src/tokenizeJson.js"
+    },
+    {
+      "id": "jsonc",
+      "extensions": [".jsonc"],
       "tokenize": "src/tokenizeJson.js"
     },
     {
